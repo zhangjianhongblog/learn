@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D3-一个完整的柱状图</title>
+    <style>
+        .axis path,
+        .axis line{
+            fill: none;
+            stroke: black;
+            shape-rendering: crispEdges;
+        }
+    
+        .axis text {
+            font-family: sans-serif;
+            font-size: 11px;
+        }
+    
+        .myRect {
+            fill: steelblue;
+        }
+    
+        .myText {
+            fill: white;
+            text-anchor: middle;
+        }
+    </style>
+</head>
+<body>
+    <script src="./d3.min.js"></script>
+    <script>
+        // 画布大小
+        let width = 400;
+        let height = 400;
+
+        // 在body里添加一个svg画布
+        let svg = d3.select('body')
+                    .append('svg');
+        svg.attr('width',width)
+            .attr('height',height);
+
+        // 画布周边的留白
+        let padding={
+            left:30,
+            right:30,
+            top:20,
+            bottom:20
+        };
+
+        // 定义一个数组
+        let dataset = [10,20,30,40,33,24,12,5];
+
+        // x轴的比例尺
+        let xScale = d3.scale.ordinal()
+            .domain(d3.range(dataset.length))
+            .rangeRoundBands([0,width-padding.left-padding.right]);
+
+        // y轴的比例尺
+        let yScale = d3.scale.linear()
+            .domain([0,d3.max(dataset)])
+            .range([height-padding.top - padding.bottom,0]);
+        
+        // 定义x轴
+        let xAxis = d3.svg.axis()
+            .scale(xScale)
+            .orient('bottom');
+
+        // 定义y轴
+        let yAxis = d3.svg.axis()
+            .scale(yScale)
+            .orient('left');
+
+        // 矩形之间的空白
+        let rectPadding = 4;
+        
+        // 添加矩形元素
+        let rects = svg.selectAll('.myRect')
+            .data(dataset)
+            .enter()
+            .append('rect')
+            .attr('class','myRect')
+            .attr('transform',`translate(${padding.left},${padding.top})`)
+            .attr('x',function (d, i) {
+                return xScale(i) + rectPadding/2
+            })
+            .attr('y',function(d, i) {
+                return height-padding.bottom;
+            })
+            .attr('width',xScale.rangeBand() - rectPadding)
+            .attr('height',function (d,i) {
+                return 0;
+            })
+            .transition()
+            .duration(1000)
+            .ease('linear')
+            .attr('y',function(d) {
+                return yScale(d)
+            })
+            .attr('height',function (d,i) {
+                return height - padding.top - padding.bottom - yScale(d);
+            })
+        // 添加文字元素
+        let texts = svg.selectAll('.myText')
+            .data(dataset)
+            .enter()
+            .append('text')
+            .attr('class','myText')
+            .attr('transform',`translate(${padding.left},${padding.top})`)
+            .attr('x',function (d ,i){
+                return xScale(i) + rectPadding/2
+            })
+            .attr('y',function (d, i) {
+                let min = yScale.domain()[0]
+                return yScale(min);
+            })
+            .attr('dx',function () {
+                return (xScale.rangeBand() -rectPadding) / 2;
+            })
+            .attr('dy',function (d) {
+                return 20;
+            })
+            .text(function (d) {
+                return d;
+            })
+            .transition()
+            .delay(function (d, i) {
+                return i * 200;
+            })
+            .duration(2000)
+            .ease('bounce')
+            .attr('y',function (d) {
+                return yScale(d)
+            })
+
+        // 添加x轴
+        svg.append('g')
+            .attr('class','axis')
+            .attr('transform',`translate(${padding.left},${height - padding.bottom})`)
+            .call(xAxis);
+        
+        // 添加y轴
+        svg.append('g')
+            .attr('class','axis')
+            .attr('transform',`translate(${padding.left},${padding.top})`)
+            .call(yAxis);
+    </script>
+</body>
+</html>
