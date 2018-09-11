@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>svg学习-stroke</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <svg height="80" width="300">
+        <g fill="none">
+            <path stroke="red" d="M 15,20 l 215,0"></path>
+            <path stroke="black" d="M 15,40 l 215,0"></path>
+            <path stroke="blue" d="M 15,60 l 215,0"></path>
+        </g>
+    </svg>
+
+    <svg height="80" width="300">
+        <g fill="none" stroke="black">
+            <path stroke-width="1" d="M 15,20 l 215,0"></path>
+            <path stroke-width="4" d="M 15,40 l 215,0"></path>
+            <path stroke-width="8" d="M 15,60 l 215,0"></path>
+        </g>
+    </svg>
+
+    <svg height="100" width="300">
+        <g fill="none" stroke="black" stroke-width="20">
+            <path stroke-linecap="butt" d="M 15,20 l 215,0"></path>
+            <path stroke-linecap="round" d="M 15,50 l 215,0"></path>
+            <path stroke-linecap="square" d="M 15,80 l 215,0"></path>
+        </g>
+    </svg>
+
+    <svg height="300" width="300">
+        <g fill="none" stroke="black" stroke-width="2">
+            <path stroke-dasharray="5" d="M 15,20 l 215,0"></path>
+            <path stroke-dasharray="5,5" d="M 15,25 l 215,0"></path>
+            <path stroke-dasharray="10" d="M 15,30 l 215,0"></path>
+            <path stroke-dasharray="10,10" d="M 15,35 l 215,0"></path>
+            <path stroke-dasharray="10,10,5,5" d="M 15,40 l 215,0"></path>
+        </g>
+    </svg>
+</body>
+
+</html>
