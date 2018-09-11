@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D3-介绍</title>
+</head>
+<body>
+    <p>hello world1</p>
+    <p>hello world2</p>
+    <script src="./d3.min.js"></script>
+
+    <!-- <script>
+        let oP = document.getElementsByTagName('p');
+        for (let i = 0; i < oP.length; i++) {
+            let item = oP[i];
+            item.innerHTML = 'I like dog';
+        }
+    </script> -->
+
+    <script>
+        let oP = d3.select('body')
+                    .selectAll('p');
+
+        oP.text('我是张建红')
+            .style('color','red')
+            .style('font-size','20px');
+    </script>
+</body>
+</html>

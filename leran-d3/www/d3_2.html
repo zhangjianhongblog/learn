@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D3-选择元素和绑定数据</title>
+</head>
+<body>
+    <p>apple</p>
+    <p>pear</p>
+    <p>banana</p>
+    <script src="./d3.min.js"></script>
+
+    <!-- <script>
+        let str = 'China';
+        
+        let body = d3.select('body');
+        let oP = body.selectAll('p');
+
+        oP.datum(str);
+
+        oP.text(function (d, i) {
+            return `第 ${i} 个元素绑定的数据是 ${d}`;
+        });
+    </script> -->
+
+    <script>
+        let dataset = ['I like dogs', 'I like cats', 'I like snakes'];
+
+        let body = d3.select('body');
+        let oP = body.selectAll('p');
+
+        oP.data(dataset)
+            .text(function (d, i) {
+            return d;
+        });
+    </script>
+</body>
+</html>

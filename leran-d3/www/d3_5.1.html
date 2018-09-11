@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D3-比例尺</title>
+</head>
+<body>
+    <script src="./d3.min.js"></script>
+    <!-- <script>
+        let dataset = [1.2, 2.3, 0.9, 1.5, 3.3];
+
+        let min = d3.min(dataset);
+        let max = d3.max(dataset);
+
+        let linear = d3.scale.linear()
+                        .domain([min,max])
+                        .range([0,300]);
+
+        console.log(linear(0.9));
+        console.log(linear(1.5));
+        console.log(linear(3.3));
+    </script> -->
+
+    <script>
+        let index = [0, 1, 2, 3, 4];
+        let color = ["red", "blue", "green", "yellow", "black"];
+
+        let ordinal = d3.scale.ordinal()
+                        .domain(index)
+                        .range(color);
+        console.log(ordinal(0));
+        console.log(ordinal(2));
+        console.log(ordinal(4));
+    </script>
+</body>
+</html>
