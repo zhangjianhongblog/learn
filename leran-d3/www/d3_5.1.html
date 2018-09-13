@@ -8,7 +8,7 @@
 </head>
 <body>
     <script src="./d3.min.js"></script>
-    <!-- <script>
+    <script>
         let dataset = [1.2, 2.3, 0.9, 1.5, 3.3];
 
         let min = d3.min(dataset);
@@ -18,10 +18,15 @@
                         .domain([min,max])
                         .range([0,300]);
 
-        console.log(linear(0.9));
-        console.log(linear(1.5));
-        console.log(linear(3.3));
-    </script> -->
+        d3.select('body')
+            .selectAll('p')
+            .data([linear(0.9),linear(1.5),linear(3.3)])
+            .enter()
+            .append('p')
+            .text(function (d) {
+                return d;
+            })
+    </script>
 
     <script>
         let index = [0, 1, 2, 3, 4];
@@ -30,9 +35,15 @@
         let ordinal = d3.scale.ordinal()
                         .domain(index)
                         .range(color);
-        console.log(ordinal(0));
-        console.log(ordinal(2));
-        console.log(ordinal(4));
+
+        d3.select('body')
+            .selectAll('h3')
+            .data([ordinal(0),ordinal(2),ordinal(4)])
+            .enter()
+            .append('h3')
+            .text(function (d) {
+                return d;
+            })
     </script>
 </body>
 </html>

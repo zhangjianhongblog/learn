@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-    <svg width="400" height="400">
+    <!-- <svg width="400" height="400">
         <defs>
             <filter id="Gaussian_Blur">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
@@ -18,6 +18,58 @@
         </defs>
 
         <ellipse cx="200" cy="200" rx="150" ry="100" style="fill:red;stroke:blue;stroke-width:5;filter:url(#Gaussian_Blur)"></ellipse>
+    </svg> -->
+
+    <!-- <svg width="400" height="400">
+        <defs>
+            <filter id="f1">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+            </filter>
+        </defs>
+        <rect width="200" height="200" x="100" y="100" stroke="green" stroke-width="3" fill="yellow" filter="url(#f1)"></rect>
+    </svg> -->
+
+    <!-- <svg width="400" height="400">
+        <defs>
+            <filter id="blueMe">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5"></feGaussianBlur>
+            </filter>
+        </defs>
+        <circle cx="100" cy="100" r="100" fill="green"></circle>
+        <circle cx="280" cy="280" r="100" fill="green" filter="url(#blueMe)"></circle>
+    </svg> -->
+
+    <!-- <svg width="400" height="400">
+        <defs>
+            <filter id="f1" x="0" y="0" width="200%" height="200%">
+                <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20"></feOffset>
+                <feBlend in="SourceGraphic" in2="offOut" mode="normal"></feBlend>
+            </filter>
+        </defs>
+        <rect width="200" height="200" stroke="green" stroke-width="3" fill="yellow" x="50" y="50" filter="url(#f1)"></rect>
+    </svg> -->
+
+    <!-- <svg width="400" height="400">
+        <defs>
+            <filter id="f2" x="0" y="0" width="200%" height="200%">
+                <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20"></feOffset>
+                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+                <feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
+            </filter>
+        </defs>
+        <rect width="200" height="200" stroke="green" stroke-width="3" fill="yellow" x="50" y="50" filter="url(#f2)"></rect>
+    </svg> -->
+
+    <svg width="400" height="400">
+        <defs>
+            <filter id="myFilter" x="0" y="0" width="200%" height="200%">
+                    <feOffset result="offOut" in="SourceGraphic" dx="20" dy="-20"></feOffset>
+                    <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+                    <feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
+            </filter>
+        </defs>
+        <circle cx="200" cy="200" r="100" fill="green" filter="url(#myFilter)"></circle>
     </svg>
+
 </body>
 </html>

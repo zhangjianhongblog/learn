@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-    <svg width="400" height="400">
+    <!-- <svg width="400" height="400">
         <defs>
             <linearGradient id="orange_red" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1;"></stop>
@@ -30,6 +30,61 @@
             </radialGradient>
         </defs>
         <ellipse cx="200" cy="200" rx="150" ry="100" style="fill:url(#orange_blue)"></ellipse>
+    </svg> -->
+
+    <!-- <svg width="400" height="400">
+        <defs>
+            <linearGradient id="myLinearGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1"></stop>
+                <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1"></stop>
+            </linearGradient>
+        </defs>
+        <ellipse cx="200" cy="200" rx="150" ry="100" fill="url(#myLinearGradient)"></ellipse>
+    </svg> -->
+
+
+    <!-- <svg width="400" height="400">
+        <defs>
+            <linearGradient id="my" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1"></stop>
+                <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1"></stop>
+            </linearGradient>
+        </defs>
+        <ellipse cx="200" cy="200" rx="150" ry="100" fill="url(#my)"></ellipse>
+    </svg> -->
+
+    <!-- <svg width="400" height="400">
+        <defs>
+            <linearGradient id="myLinear" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:rgb(0,0,0);stop-opacity:1"></stop>
+                <stop offset="100%" style="stop-color:rgb(0,255,0);stop-opacity:1"></stop>
+            </linearGradient>
+        </defs>
+        <ellipse cx="200" cy="200" rx="150" ry="100" fill="url(#myLinear)"></ellipse>
+        <text font-size="45" font-familay="Verdana" x="200" y="200" fill="white" text-anchor="middle">SVG</text>
+    </svg> -->
+    
+
+    <!-- <svg height="400" width="400">
+        <defs>
+            <radialGradient id="myRadial" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop style="stop-color:#fff;stop-opacity:0" offset="0%"></stop>
+                <stop style="stop-color:blue;stop-opacity:1" offset="100%"></stop>
+            </radialGradient>
+        </defs>
+        <ellipse cx="200" cy="200" rx="150" ry="100" fill="url(#myRadial)"></ellipse>
+    </svg> -->
+
+
+    <svg height="400" width="400">
+        <defs>
+            <radialGradient id="grad1" cx="20%" cy="20%" r="30%" fx="70%" fy="70%">
+                <stop offset="0%" style="stop-color:#fff;stop-opacity:1"></stop>
+                <stop offset="100%" style="stop-color:#0000ff;stop-opacity:1"></stop>
+            </radialGradient>
+        </defs>
+        <ellipse cx="200" cy="200" rx="150" ry="100" fill="blue"></ellipse>
+        <ellipse cx="200" cy="200" rx="150" ry="100" fill="url(#grad1)"></ellipse>
     </svg>
 </body>
 </html>
