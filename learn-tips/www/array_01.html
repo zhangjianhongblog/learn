@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>如何在Javascript中更好的使用数组</title>
+</head>
+<body>
+    
+</body>
+<!-- <script>
+    const characters = [
+        'ironman',
+        'black_window',
+        'hulk',
+        'caption_america',
+        'hulk',
+        'thor',
+    ]
+    console.log(characters.indexOf('hulk')); // 2
+    console.log(characters.includes('hulk')); // true
+    console.log(characters.indexOf('batman')); // -1
+    console.log(characters.includes('batman')); // false
+</script> -->
+
+
+<!-- <script>
+    const charactors = [
+        {
+            id:1,
+            name:'ironman',
+        },
+        {
+            id:2,
+            name:'black_widow',
+        },
+        {
+            id:3,
+            name:'caption_america',
+        },
+        {
+            id:4,
+            name:'caption_america',
+        },
+    ];
+
+    console.log(charactors.filter((item,index)=>{
+        return item.name === 'caption_america';
+    })); //[{id: 3, name: "caption_america"},{id: 4, name: "caption_america"}]
+
+    console.log(charactors.find((item,index) => {
+        return item.name === 'caption_america';
+    })); // {id: 3, name: "caption_america"}
+</script> -->
+
+
+<!-- <script>
+    const charaters = [
+        { id: 1, name: "ironman", env: "marvel" },
+        { id: 2, name: "black_widow", env:"marvel" },
+        { id: 3, name: "wonder_woman", env:"dc_comics" },
+    ];
+
+    console.log(charaters.find((item, index) => {
+        return item.env === 'marvel';
+    })); //{id: 1, name: "ironman", env: "marvel"}
+    console.log(charaters.some((item, index) => {
+        return item.env === 'marvel';
+    })); // true
+</script> -->
+
+
+<script>
+    const characters = [
+        { name: 'ironman', env: 'marvel' },
+        { name: 'black_widow', env: 'marvel' },
+        { name: 'wonder_woman', env: 'dc_comics' },
+    ];
+
+    let filterMapDatas = characters.filter((item, index) => {
+        return item.env === 'marvel';
+    }).map((element, elementIndex) => {
+        return Object.assign({},element,{alsoSeenIn: ['Avengers']})
+    });
+    console.table(filterMapDatas);
+
+    let reduceDatas = characters.reduce((prev,next)=>{
+        if (next.env === 'marvel') {
+            let tempData = Object.assign({},next,{alsoSeenIn: ['Avengers']});
+            prev.push(tempData);
+        }
+        return prev;
+    },[]);
+
+    console.table(reduceDatas);
+</script>
+
+</html>
