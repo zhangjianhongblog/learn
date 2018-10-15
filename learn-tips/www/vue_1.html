@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue是如何做到数据响应的</title>
+</head>
+<body>
+    <a href="https://mp.weixin.qq.com/s/VqcoS-5H8RaMfCTabZFj5A">连接地址</a>
+    <!-- <div id="app">
+        <div>Price: ${{price}}</div>
+        <div>Price: ${{price * quantity}}</div>
+        <div>Taxes: ${{totalPriceWithTax}}</div>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                price:5.00,
+                quantity:2,
+            },
+            computed:{
+                totalPriceWithTax() {
+                    return this.price * this.quantity * 1.03;
+                }
+            }
+        })
+    </script> -->
+
+    <!-- <script>
+        let price = 5;
+        let quantity = 2;
+        let total = price * quantity;
+        price = 20;
+        console.log(`total id ${total}`); // 10
+    </script> -->
+
+    <!-- <script>
+        let price = 5;
+        let quantity = 2;
+        let total = 0;
+        let target = null;
+
+        // target = function () {
+        //     total = price * quantity;
+        // }
+        // 相等于
+        target = () => {total = price * quantity};
+
+        let storage = [];
+        function record() {
+            storage.push(target);
+        }
+
+        record();
+        target();
+        
+        function replay() {
+            storage.forEach(run => run())
+        }
+
+        price = 20;
+        console.log(total); // 10
+        replay();
+        console.log(total); // 40
+    </script> -->
+
+    <!-- <script>
+        let price = 5;
+        let quantity = 2;
+        let total = 0;
+        let target = null;
+        let storage = [];
+        function record() {
+            storage.push(target);
+        }
+        function replay() {
+            storage.forEach(run => run());
+        }
+        target = () => {total = price * quantity};
+
+        record();
+        target();
+
+        price = 20;
+        console.log(total); // 10
+        replay();
+        console.log(total); // 40
+    </script> -->
+
+    <!-- <script>
+        class Dep { // stands for dependency
+            constructor() {
+                this.subscribers = []; // the targets that are dependent,and shuould be run when notify() is called.
+            }
+
+            depend(x){ // this replaces our record function
+                if (x && !this.subscribers.includes(x)) {
+                    // only if there is a target && it`s not already subscribed
+                    this.subscribers.push(x)
+                }
+            }
+
+            notify() { // Replaces our replay function 
+                this.subscribers.forEach(sub=>sub()) // Run our targets,or observers
+            }
+        }
+
+        let dep = new Dep();
+
+        let price = 5;
+        let quantity = 2;
+        let total = 0;
+        let target = () => {total = price * quantity};
+        dep.depend(target); // And this target to our subscribers
+        target(); // Run it to get the total;
+
+        console.log(total); // 10 the right number
+        price = 20;
+        console.log(total); // 10 No longer the right number
+        dep.notify(); // Run the subscribers
+        console.log(total); // 40  Now the right number
+    </script> -->
+
+    <!-- <script>
+        class Dep {
+            constructor() {
+                this.subscribers = [];
+            }
+            depend() {
+                if (target && !this.subscribers.includes(target)) {
+                    this.subscribers.push(target);
+                }
+            }
+            notify(){
+                this.subscribers.forEach(sub=>sub());
+            }
+        }
+        function watcher(myFunc) {
+            target = myFunc;
+            dep.depend(target);
+            target();
+            target = null;
+        }
+
+        let dep = new Dep();
+
+        let price = 5;
+        let quantity = 2;
+        let total = 0;
+        watcher(() => {
+            total = price * quantity
+        })
+
+        console.log(total);
+        price = 20;
+        console.log(total);
+        dep.notify();
+        console.log(total);
+    </script> -->
+
+    <!-- <script>
+        let data = {
+            price: 5,
+            quantity:2,
+        }
+        Object.defineProperty(data,'price',{ // For just the price property
+            get() {  // Create a get method
+                console.log('I was assessed');
+            },
+            set(newVal){ // Create a set method
+                console.log('I was chenged');
+            }
+        });
+
+        data.price // this calls get()
+        data.price = 20; // this calls set();
+    </script> -->
+
+
+    <!-- <script>
+        let data = {
+            price: 5,
+            quantity: 2,
+        }
+        let internalValue = data.price;
+
+        Object.defineProperty(data,'price',{
+            get() {
+                console.log(`Getting price :${internalValue}`);
+                return internalValue;
+            },
+            set(newVal) {
+                console.log(`Setting price: ${newVal}`);
+                internalValue = newVal;
+            }
+        })
+
+        total = data.price * data.quantity;
+        data.price = 20;
+    </script> -->
+
+    <!-- <script>
+        let data = {
+            price: 5,
+            quantity: 2,
+        };
+
+        Object.keys(data).forEach(key => {
+            let internalValue = data[key];
+            Object.defineProperty(data,key,{
+                get() {
+                    console.log(`Getting ${key} : ${internalValue}`);
+                    return internalValue;
+                },
+                set(newVal) {
+                    console.log(`Setting ${key} : ${newVal}`);
+                    internalValue = newVal;
+                }
+            })
+        })
+        total = data.price * data.quantity;
+        data.price = 20;
+    </script> -->
+
+    <script>
+        let data = {
+            price: 5,
+            quantity: 2,
+        }
+        let target = null;
+
+        // this is exactly the same Dep class
+        class Dep {
+            constructor() {
+                this.subscribers = []
+            }
+            depend() {
+                if (target && !this.subscribers.includes(target)) {
+                    this.subscribers.push(target);
+                }
+            }
+            notify() {
+                this.subscribers.forEach(sub => sub())
+            }
+        }
+
+        Object.keys(data).forEach(key => {
+            let internalValue = data[key];
+            const dep = new Dep();
+            Object.defineProperty(data,key,{
+                get() {
+                    dep.depend();
+                    return internalValue;
+                },
+                set(newVal) {
+                    internalValue = newVal;
+                    dep.notify();
+                }
+            })
+        });
+
+        function watcher(myFunc) {
+            target = myFunc;
+            target();
+            target = null;
+        }
+
+        watcher(()=>{
+            data.total = data.price * data.quantity;
+        })
+    </script>
+</body>
+</html>

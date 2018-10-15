@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>十大经典排序算法</title>
+</head>
+
+<body>
+    <a href="https://mp.weixin.qq.com/s/putWU_FBF7cZJkuVpCy0sw" target="_blank">参考链接</a>
+    <!-- <script>
+        // 冒泡排序
+        let arr = [50, 34, 56, 7, 3, 3, 65, 23, 46, 67, 2, 12, 4, 5, 19]
+
+        function bubbleSort(ary) {
+            for (let i = 0; i < ary.length - 1; i++) {
+                for (let j = i + 1; j < ary.length; j++) {
+                    if (ary[j] < ary[i]) {
+                        let temp = ary[j];
+                        ary[j] = ary[i];
+                        ary[i] = temp;
+                    }
+                }
+            }
+            return ary;
+        }
+        console.log(bubbleSort(arr));
+    </script> -->
+
+    <!-- <script>
+        // 1、冒泡排序
+        let arr = [50, 34, 56, 7, 3, 3, 65, 23, 46, 67, 2, 12, 4, 5, 19];
+        function bubbleSort(ary) {
+            let len = ary.length;
+            // 第一层for循环记数，记录循环几次
+            for (let i = 0; i < len - 1; i++) {
+                // 第二层for循环才是比较大小
+                for (let j = 0; j < len - 1 - i; j++) {
+                    if (ary[j] > ary[j+1]) {
+                        {
+                            [ary[j],ary[j+1]]=[ary[j+1],ary[j]]
+                        }
+                    }
+                }
+            }
+            return ary;
+        };
+        console.log('冒泡排序：',bubbleSort(arr));
+    </script> -->
+
+    <!-- <script>
+        // 2、选择排序
+        let arr = [50, 34, 56, 7, 3, 3, 65, 23, 46, 67, 2, 12, 4, 5, 19];
+        function selectionSort(ary) {
+            let len = ary.length;
+            let minIndex;
+            for (let i = 0; i < len - 1; i++) {
+                minIndex = i;
+                for (let j = i + 1; j < len; j++) {
+                    if (ary[j] < ary[minIndex]) {
+                        minIndex = j;
+                    }
+                }
+                {
+                    [ary[i],ary[minIndex]] = [ary[minIndex],ary[i]]
+                }
+            }
+            return ary;
+        }
+        console.log('选择排序：',selectionSort(arr));
+    </script> -->
+
+    <!-- <script>
+        // 3、插入排序
+        let ary = [50, 34, 56, 7, 3, 3, 65, 23, 46, 67, 2, 12, 4, 5, 19];
+        function insertionSort(arr) {
+            let len = arr.length;
+            let preIndex,current;
+            for (let i = 1; i < len; i++) {
+                preIndex = i - 1;
+                current = arr[i];
+                while (preIndex >=0 && arr[preIndex] > current) {
+                    arr[preIndex + 1] = arr[preIndex];
+                    preIndex--;
+                }
+                arr[preIndex + 1] = current;
+            }
+            return arr;
+        }
+        console.log('插入排序：',insertionSort(ary));
+    </script> -->
+
+    <script>
+            // 4、希尔排序
+            let ary = [50, 34, 56, 7, 3, 3, 65, 23, 46, 67, 2, 12, 4, 5, 19];
+            function shellSort(arr) {
+                
+            }
+            console.log('希尔排序：',shellSort(ary));
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组</title>
+</head>
+<body>
+    <a href="https://mp.weixin.qq.com/s?__biz=MzA5NzkwNDk3MQ==&mid=2650588278&idx=1&sn=7a08b9f746c19da3601d49f306d119a2&chksm=8891d452bfe65d440eab79524507f00ba2d8c2868f3010bf5b7aebc63b8c071a74d3a3c6e7c0&mpshare=1&scene=24&srcid=1012r8zuRg8wVOKSqVB64OnR#rd">参考链接</a>
+    
+    <script>
+          let arr = [
+              {
+                  id:1,
+                  type:"A",
+                  total:3
+              },
+              {
+                  id:2,
+                  type:"B",
+                  total:5
+              },
+              {
+                  id:3,
+                  type:"E",
+                  total:7
+              },
+          ]  
+
+        //   function sum(arr) {
+        //       let sum = 0;
+        //       arr.forEach(element => {
+        //           sum += element.total; 
+        //       });
+        //       return sum;
+        //   }
+        //   console.log(sum(arr));
+
+        // let sum = arr.reduce((num,{total})=>{
+        //     return num + total;
+        // },0);
+        // console.log(sum);
+
+        // let str = arr.reduce((temp,{id,type})=>{
+        //     return temp + `id:${id},type:${type};`;
+        // },'')
+        // console.log(str);
+
+        // function changeToObj(arr) {
+        //     const obj = {};
+        //     arr.forEach(({id,type,total}) => {
+        //         obj[id] = {
+        //             type,
+        //             total,
+        //         }
+        //     });
+        //     return obj;
+        // }
+        // console.table(changeToObj(arr));
+
+        // let obj = arr.reduce((tempObj,{id,type,total})=>{
+        //     tempObj[id] = {
+        //         type,
+        //         total
+        //     };
+        //     return tempObj;
+        // },{});
+
+        // console.table(obj);
+    </script>
+
+    <!-- <script>
+        'use strict';
+
+        const charactors = ['ironman', 'black_widow','hulk','captain_america', 'hulk', 'thor'];
+        console.log(charactors.indexOf('hulk')); // 2
+        console.log(charactors.indexOf('batman')); // -1
+        console.log(charactors.includes('hulk')); // true
+        console.log(charactors.includes('batman')); // false
+    </script> -->
+
+    <!-- <script>
+        'use strict';
+
+        const charactors = [
+            {
+                id: 1,
+                name: 'ironman',
+            },
+            {
+                id: 2,
+                name: 'balck_widow',
+            },
+            {
+                id: 3,
+                name: 'captain_america',
+            },
+            {
+                id: 4,
+                name: 'captain_america',
+            }
+        ];
+        function getCharactor(name) {
+            return charactor => charactor.name === name;
+        }
+        console.log(charactors.filter(getCharactor('captain_america')));
+        console.log(charactors.find(getCharactor('captain_america')));
+    </script> -->
+
+    <!-- <script>
+        'use strict';
+        const charactors = [
+            {
+                id: 1,
+                name: 'ironman',
+                env: 'marvel',
+            },
+            {
+                id: 2,
+                name: 'balck_widow',
+                env: 'marvel',
+            },
+            {
+                id: 3,
+                name: 'wonder_woman',
+                env: 'dc_comics',
+            },
+        ];
+        function hasCharacterFrom(env) {
+            return charactor => charactor.env === env;
+        }
+        console.log(charactors.find(hasCharacterFrom('marvel')));
+        console.log(charactors.some(hasCharacterFrom('marvel')));
+        
+    </script> -->
+    <script>
+        'use strict';
+        const charactors = [
+            {
+                id: 1,
+                name: 'ironman',
+                env: 'marvel',
+            },
+            {
+                id: 2,
+                name: 'balck_widow',
+                env: 'marvel',
+            },
+            {
+                id: 3,
+                name: 'wonder_woman',
+                env: 'dc_comics',
+            },
+        ];
+        let arr1 = charactors.reduce((tempArr,item)=>{
+            return item.env === 'marvel' ? tempArr.concat(Object.assign(item,{age:30})) : tempArr;
+        },[]);
+        console.table(arr1);
+    </script>
+</body>
+</html>

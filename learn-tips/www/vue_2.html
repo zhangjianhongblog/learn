@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>深入Vue声明周期</title>
+</head>
+<body>
+    <a href="https://mp.weixin.qq.com/s/4ukhHAcMQN07y0ssYqUeuA" target="_blank">参考连接</a>
+    <script src="./vue.js"></script>
+
+    <div id="app">
+        <h3>单组件</h3>
+        <button @click="dataVar +=1">更新{{dataVar}}</button>
+        <button @click="handlerDestroy">销毁</button>
+    </div>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                dataVar: 1,
+            },
+            beforeCreate() {
+                this.compName = 'single';
+                console.log(`--${this.compName} -- beforeCreate`);
+            },
+            created() {
+                console.log(`--${this.compName} -- created`);
+            },
+            beforeMount() {
+                console.log(`--${this.compName} -- beforeMount`);
+            },
+            mounted() {
+                console.log(`--${this.compName} -- mounted`);
+            },
+            beforeUpdate() {
+                console.log(`--${this.compName} -- beforeUpdate`);
+            },
+            updated() {
+                console.log(`--${this.compName} -- updated`);
+            },
+            beforeDestroy() {
+                console.log(`--${this.compName} -- beforeDestroy`);
+            },
+            destroyed(){
+                console.log(`--${this.compName} -- destroyed`);
+            },
+            methods:{
+                handlerDestroy(){
+                    this.$destroy();
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>谈谈一些有趣的CSS题目</title>
+    <style>
+        * {
+            margin: 0;
+            padding:0;
+        }
+        /* 第一题 */
+        .first{
+            position:relative;
+            width:200px;
+            height: 60px;
+            background: #ddd;
+            margin-left: 100px;
+            
+        }
+        
+        /* .firstItem{
+            border-left:5px solid deeppink;
+        } */
+
+        /* .firstItem::after{
+            position:absolute;
+            content:"";
+            width:5px;
+            height:60px;
+            left:0;
+            top:0;
+            background: deeppink;
+        } */
+
+        /* .firstItem{
+            box-shadow: -5px 0 0 0 deeppink;
+        } */
+
+        .firstItem{
+            box-shadow: 5px 0 0 0 deeppink inset;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://github.com/chokcoco/iCSS/issues/1" target="_blank">参考链接</a>
+    <!-- 第一题 -->
+    <div class="first firstItem"></div>
+</body>
+</html>

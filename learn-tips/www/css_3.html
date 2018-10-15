@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>妙用scale与transform-origin，精准控制动画方向</title>
+    <style>
+        * {
+            margin: 0;
+            padding:0;
+        }
+        div {
+            padding:400px;
+        }
+        p {
+            width:200px;
+            height: 40px;
+            line-height: 40px;
+            font-size:30px;
+            position: relative;
+        }
+        p::before{
+            position: absolute;
+            content:'';
+            width:0;
+            height: 4px;
+            background: red;
+            left:0;
+            bottom:0;
+            transition: all 0.2s linear;
+        }
+        p:hover::before{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Hover Me</p>
+    </div>
+</body>
+</html>
