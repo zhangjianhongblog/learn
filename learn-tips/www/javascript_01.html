@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>五个小技巧让你写出更好的 JavaScript 条件语句</title>
+</head>
+<body>
+    <a href="https://mp.weixin.qq.com/s/V4fTknn11pUENn0MEMzObA">参考链接</a>   
+    <script>
+        // 1、使用 Array.includes 来处理多重条件
+        
+        // function test(fruit) {
+        //     if (fruit ==='apple' || fruit === 'strawberry') {
+        //         console.log('red');
+        //     }
+        // }
+        // test('apple');
+        // test();
+
+        // function test(fruit) {
+        //     let redFruits = ['apple', 'strawberray', 'cherry', 'cranberries'];
+        //     if (redFruits.includes(fruit)) {
+        //         console.log('red');
+        //     }
+        // }
+        // test('apple');
+    </script>
+
+    <script>
+        // 2、少写嵌套，尽早返回
+
+        // function test(fruit, quantity) {
+        //     const redFruits = ['apple', 'strawberray', 'cherry', 'cranberries'];
+
+        //     if (fruit) {
+        //         if (redFruits.includes(fruit)) {
+        //             console.log('red');
+        //             if (quantity > 10) {
+        //                 console.log('big quantity');
+        //             }
+        //         }
+        //     } else {
+        //         throw new Error('no Fruit');
+        //     }
+        // }
+        // test(null);
+        // test();
+        // test('apple');
+        // test('apple',20);
+
+        // function test(fruit, quantity) {
+        //     const redFruits = ['apple', 'strawberray', 'cherry', 'cranberries'];
+
+        //     if (!fruit) throw new Error('No Fruit!');
+
+        //     if (redFruits.includes(fruit)) {
+        //         console.log('red');
+
+        //         if (quantity > 10) {
+        //             console.log('big quantity');
+        //         }
+        //     }
+        // }
+
+
+        // function test(fruit, quantity) {
+        //     const redFruits = ['apple', 'strawberray', 'cherry', 'cranberries'];
+
+        //     if (!fruit) throw new Error('No Fruit!');
+
+        //     if (!redFruits.includes(fruit)) return;
+
+        //     console.log('red');
+        //     if (quantity > 10) {
+        //         console.log('big quantity');
+        //     }
+        // }
+
+    </script>
+
+    <script>
+        // 3、使用函数默认参数和解构
+
+        // function test(fruit, quantity) {
+        //     if (!fruit) return;
+        //     let q = quantity || 1;
+        //     console.log(`We have ${q}个${fruit}`);
+        // }
+        // test('apple');
+        // test('apple',20);
+
+        // function test(fruit, quantity = 1) {
+        //     if (!fruit) return;
+        //     console.log(`We have ${quantity} ${fruit}!`);
+        // }
+        // test('apple');
+        // test('apple',20);
+        // test('apple',null);
+
+
+        // function test(fruit) {
+        //     if (fruit && fruit.name) {
+        //         console.log(fruit.name);
+        //     } else {
+        //         console.log('unKnown');
+        //     }
+        // }
+        // test(undefined);
+        // test({});
+        // test({name:"apple",color:'red'});
+
+        // function test({name} = {}) {
+        //     console.log(name || 'unKnown');
+        // }
+        // test(undefined);
+        // test({});
+        // test({name:"apple",color:"red"});
+    </script>
+
+    <script>
+        // function test(color) {
+        //     switch (color) {
+        //         case 'red':
+        //             return ['apple', 'strawberry'];
+        //         case 'yellow':
+        //             return ['banana', 'pineapple'];
+        //         case 'purple':
+        //             return ['grape', 'plum'];
+        //         default:
+        //             return [];
+        //     }
+        // }
+        // console.log(test(null));
+        // console.log(test('red'));
+
+        // const fruitColor =　{
+        //     red:['apple', 'strawberry'],
+        //     yellow:['banana', 'pineapple'],
+        //     purple:['grape', 'plum'],
+        // }
+        // function test(color) {
+        //     return fruitColor[color] || [];
+        // }
+        // console.log(test(null));
+        // console.log(test('yellow'));
+
+        // const fruitColor = new Map()
+        //     .set('red', ['apple', 'strawberry'])
+        //     .set('yellow', ['banana', 'pineapple'])
+        //     .set('purple', ['grape', 'plum']);
+
+        // function test(color) {
+        //     return fruitColor.get(color) || [];
+        // }
+        // console.log(test(null));
+        // console.log(test('yellow'));
+
+        // const fruits = [
+        //     {name: "apple", color: 'red'},
+        //     {name: "strawberry", color: 'red'},
+        //     {name: "banana", color: 'yellow'},
+        //     {name: "pineapple", color: 'yellow'},
+        //     {name: "grape", color: 'purple'},
+        //     {name: "plum", color: 'purple'},
+        // ];
+        // function test(color) {
+        //     return fruits.filter(f => f.color ===color);
+        // }
+        // console.log(test(null));
+        // console.table(test('red'));
+    </script>
+
+    <script>
+        // 5、使用 Array.every 和 Array.some 来处理全部/部分满足条件
+        const fruits = [
+            {name: "apple", color: 'red'},
+            {name: "banana", color: 'yellow'},
+            {name: "grape", color: 'purple'}
+        ];
+        // function test () {
+        //     let isAllRed = true;
+        //     for (let f of fruits) {
+        //         if (!isAllRed) break;
+        //         isAllRed = f.color === 'red';
+        //     }
+        //     console.log(isAllRed);
+        // }
+        // test();
+
+        function testEvery() {
+            return fruits.every(f => f.color === 'red');
+        }
+        console.log(testEvery());
+
+        function testSome() {
+            return fruits.some(f => f.color === 'red');
+        }
+        console.log(testSome());
+    </script>
+</body>
+</html>
