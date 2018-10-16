@@ -5,11 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS垂直居中技巧，我只会23个，你会几个？</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        .box{
+            border:1px solid red;
+            width:500px;
+            height: 250px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
+    <a href="https://mp.weixin.qq.com/s/bdhjmcIIh5TYcd2d_g11aw">参考链接</a>
     
-    <!-- <style>
-        .content{
+    <h2>1.line-height</h2>
+    <style>
+        .box1{
+            
+        }
+        .box1 .content{
             width:400px;
             background: #ccc;
             height: 100px;
@@ -17,18 +33,14 @@
             margin: auto;
         }
     </style>
-    <div class="content">我是谁？</div> -->
+    <div class="box box1">
+        <div class="content">我是谁？</div>
+    </div>
 
-    <!-- <style>
-        h2{
-            text-align: center;
-        }
-        .box{
-            width: 500px;
-            border:1px solid #f00;
-            margin: auto;
-            line-height: 200px;
-            text-align: center;
+    <h2>2.line-height + inline-block</h2>
+    <style>
+        .box2{
+            line-height: 250px;
         }
         .box2 .content {
             display: inline-block;
@@ -44,54 +56,41 @@
             <a>CSS3精美相册效果</a>
             效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
         </div>
-    </div> -->
+    </div>
 
-    <!-- <style>
-        h2{
+    <h2>3.:before + inline-block</h2>
+    <style>
+        .box3{
             text-align: center;
         }
-        .box{
-            width: 500px;
-            height: 250px;
-            border:1px solid #f00;
-            margin: auto;
-            text-align: center;
-        }
-        .box::before {
+        .box3::before {
             content:'';
             display: inline-block;
             height: 100%;
             width: 0;
             vertical-align:middle;
         }
-        .box .content{
+        .box3 .content{
             width: 400px;
             background: #ccc;
             display: inline-block;
             vertical-align: middle;
         }
     </style>
-    <h2>3.:before + inline-block</h2>
     <div class="box box3">
         <div class="content">
             立马来看Amos实际完成的    
             <a>CSS3精美相册效果</a>
             效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
         </div>
-    </div> -->
+    </div>
 
-    <!-- <style>
-        h2{
-            text-align: center;
-        }
-        .box{
-            width: 500px;
-            height: 250px;
-            border:1px solid #f00;
-            margin: auto;
+    <h2>4.(宽高固定)absolute + margin 负值</h2>
+    <style>
+        .box4{
             position: relative;
         }
-        .box .content{
+        .box4 .content{
             width: 400px;
             height: 70px;
             position: absolute;
@@ -102,27 +101,20 @@
             background: #ccc;
         }
     </style>
-    <h2>4.absolute + margin 负值</h2>
     <div class="box box4">
         <div class="content">
             立马来看Amos实际完成的    
             <a>CSS3精美相册效果</a>
             效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
         </div>
-    </div> -->
+    </div>
 
-    <!-- <style>
-        h2{
-            text-align: center;
-        }
-        .box{
-            width: 500px;
-            height: 250px;
-            border:1px solid #f00;
-            margin:auto;
+    <h2>5.(宽高固定)absolute + margin auto</h2>
+    <style>
+        .box5{
             position: relative;
         }
-        .box .content{
+        .box5 .content{
             width: 400px;
             height: 70px;
             position: absolute;
@@ -134,27 +126,21 @@
             background: #ccc;
         }
     </style>
-    <h2>5.absolute + margin auto</h2>
+    
     <div class="box box5">
         <div class="content">
             立马来看Amos实际完成的    
             <a>CSS3精美相册效果</a>
             效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
         </div>
-    </div> -->
+    </div>
 
-    <!-- <style>
-        h2{
-            text-align: center;
-        }
-        .box{
-            width: 500px;
-            height: 250px;
-            border:1px solid #f00;
-            margin: auto;
+    <h2>6.(宽高不固定)absolute + transform:translate(-50%,-50%)</h2>
+    <style>
+        .box6{
             position: relative;
         }
-        .box .content{
+        .box6 .content{
             width: 400px;
             position: absolute;
             top:50%;
@@ -163,34 +149,27 @@
             background: #ccc;
         }
     </style>
-    <h2>6.absolute + transform:translate(-50%,-50%)</h2>
     <div class="box box6">
         <div class="content">
             立马来看Amos实际完成的    
             <a>CSS3精美相册效果</a>
             效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
         </div>
-    </div> -->
+    </div>
 
+
+    <h2>7.(宽高不固定)flex + align-items + justify-content</h2>
     <style>
-        h2{
-            text-align: center;
-        }
-        .box{
-            width: 500px;
-            height: 250px;
-            border:1px solid #f00;
-            margin: auto;
+        .box7{
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .box .content{
+        .box7 .content{
             width: 400px;
             background: #ccc;
         }
     </style>
-    <h2>7.flex + align-items</h2>
     <div class="box box7">
         <div class="content">
             立马来看Amos实际完成的    
@@ -198,5 +177,358 @@
             效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
         </div>
     </div>
+
+    <h2>8.Flex + :before + flex-grow</h2>
+    <style>
+        .box8{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .box8::before{
+            content:"";
+            flex-grow: .5;
+        }
+        .box8 .content{
+            width:400px;
+            background: #ccc;
+        }
+    </style>
+    <div class="box box8">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>9.Flex + margin</h2>
+    <style>
+        .box9{
+            display: flex;
+        }
+        .box9 .content{
+            width:400px;
+            background: #ccc;
+            margin: auto;
+        }
+    </style>
+    <div class="box box9">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>10.Flex + align-self</h2>
+    <style>
+        .box10{
+            display: flex;
+            justify-content: center;
+        }
+        .box10 .content{
+            width:400px;
+            background: #ccc;
+            align-self: center;
+        }
+    </style>
+    <div class="box box10">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>11.Flex + align-content</h2>
+    <style>
+        .box11{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+        .box11 .content{
+            width:400px;
+            background: #ccc;
+        }
+        .box11::before,.box11::after{
+            content: '';
+            display: block;
+            width:100%;
+        }
+    </style>
+    <div class="box box11">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>12.Grid + template</h2>
+    <style>
+        .box12{
+            display: grid;
+            grid-template-rows:1fr auto 1fr;
+            grid-template-columns: 1fr auto 1fr;
+            grid-template-areas: 
+                '...'
+                '. amos .'
+                '...';
+        }
+        .box12 .content{
+            width:400px;
+            background: #ccc;
+            grid-area:amos;
+        }
+
+    </style>
+    <div class="box box12">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>13.Grid + align-items</h2>
+    <style>
+        .box13{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        .box13 .content{
+            width: 400px;
+            background: #ccc;
+        }
+
+    </style>
+    <div class="box box13">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>14.Grid + align-content</h2>
+    <style>
+        .box14{
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+        .box14 .content{
+            width:400px;
+            background: #ccc;
+        }
+    </style>
+    <div class="box box14">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>15.Grid + align-self</h2>
+    <style>
+        .box15{
+            display: grid;
+            justify-content: center;
+        }
+        .box15 .content{
+            width:400px;
+            background: #ccc;
+            align-self: center;
+        }
+    </style>
+    <div class="box box15">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>16.Grid + place-items</h2>
+    <style>
+        .box16{
+            display: grid;
+            place-items:center;
+        }
+        .box16 .content{
+            width:400px;
+            background: #ccc;
+        }
+    </style>
+    <div class="box box16">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>17.Grid + place-content</h2>
+    <style>
+        .box17{
+            display: grid;
+            place-content:center;
+        }
+        .box17 .content{
+            width:400px;
+            background: #ccc;
+        }
+    </style>
+    <div class="box box17">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>18.Grid + margin</h2>
+    <style>
+        .box18{
+            display: grid;
+        }
+        .box18 .content{
+            width:400px;
+            background: #ccc;
+            margin:auto;
+        }
+    </style>
+    <div class="box box18">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>19.table-cell</h2>
+    <style>
+        .box19{
+            margin: auto;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .box19 .content{
+            width:400px;
+            background: #ccc;
+            margin: auto;
+        }
+    </style>
+    <div class="box box19">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>20.calc</h2>
+    <style>
+        .box20{
+            
+        }
+        .box20 .content{
+            width:400px;
+            background: #ccc;
+            position: relative;
+            top:calc(50% - 35px);
+            /* top:calc((100% - 70px) / 2); */
+            margin: auto;
+            height: 70px;
+        }
+    </style>
+    <div class="box box20">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>21.relative + translateY</h2>
+    <style>
+        .box21{
+            
+        }
+        .box21 .content{
+            width:400px;
+            background: #ccc;
+            position: relative;
+            top:50%;
+            margin: auto;
+            transform: translateY(-50%);
+        }
+    </style>
+    <div class="box box21">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！  
+        </div>
+    </div>
+
+    <h2>22.padding</h2>
+    <style>
+        .box22{
+            height: auto;
+            padding:50px 0;
+        }
+        .box22 .content{
+            width:400px;
+            background: #ccc;
+            margin: auto;
+        }
+    </style>
+    <div class="box box22">
+        <div class="content">
+            立马来看Amos实际完成的    
+            <a>CSS3精美相册效果</a>
+            效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！
+        </div>
+    </div>
+
+    <h2>23.writing-mode</h2>
+    <style>
+        .box23{
+            writing-mode: tb-lr;
+            writing-mode: vertical-lr;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .box23 .content{
+            width:400px;
+            background: #ccc;
+            display: inline-block;
+            width:100%;
+            writing-mode: lr-tb;
+            margin: auto;
+            text-align: left;
+        }
+        .box23 .content .txt{
+            width:80%;
+            margin: auto;
+        }
+    </style>
+    <div class="box box23">
+        <div class="content">
+            <div class="txt">
+                立马来看Amos实际完成的    
+                <a>CSS3精美相册效果</a>
+                效果吧！別忘了拖拉一下窗口看看 RWD 效果喔！
+            </div>  
+        </div>
+    </div>
+
 </body>
 </html>

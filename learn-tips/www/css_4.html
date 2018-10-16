@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS实现水平居中的10种方式</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://mp.weixin.qq.com/s/dtHn6WU-Q9kkArWD8YfvCQ">参考链接</a>
+    
+    <h2>1、定宽高：absolute + 负margin</h2>
+    <style>
+        .wp1{
+            border:1px solid red;
+            width:300px;
+            height:300px;
+            margin:auto;
+            position: relative;
+        }
+        .wp1 .box{
+            background: green;
+            height: 100px;
+            width:100px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-top:-50px;
+            margin-left: -50px;
+        }
+    </style>    
+    <div class="wp1">
+        <div class="box">12312</div>
+    </div>
+
+    <h2>2、定宽高：absolute + margin + auto</h2>
+    <style>
+        .wp2{
+            border:1px solid red;
+            width:300px;
+            height: 300px;
+            margin: auto;
+            position: relative;
+        }
+        .wp2 .box{
+            width:100px;
+            height: 100px;
+            background: green;
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin: auto;
+        }
+    </style>
+    <div class="wp2">
+        <div class="box">12312</div>
+    </div>
+
+
+    <h2>3、定宽高：absolute + calc</h2>
+    <style>
+        .wp3{
+            border:1px solid red;
+            width:300px;
+            height: 300px;
+            margin: auto;
+            position: relative;
+        }
+        .wp3 .box{
+            width:100px;
+            height: 100px;
+            background: green;
+            position: absolute;
+            /* 注意:加减运算时，符号前后要加空格。乘除运算则不需要。 */
+            top:calc(50% - 50px);
+            left:calc(50% - 50px);
+        }
+    </style>
+    <div class="wp3">
+        <div class="box">12312</div>
+    </div>
+
+    <h2>4、不定宽高：absolute + transform</h2>
+    <style>
+        .wp4{
+            border:1px solid red;
+            width:300px;
+            height: 300px;
+            margin: auto;
+            position: relative;
+        }
+        .wp4 .box{
+            background: green;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+    <div class="wp4">
+        <div class="box">12312</div>
+    </div>
+    
+    <h2>5、不定宽高：line-height</h2>
+    <style>
+        .wp5{
+            border:1px solid red;
+            width:300px;
+            height: 300px;
+            margin: auto;
+            line-height: 300px;
+            font-size:0;
+            text-align: center;
+        }
+        .wp5 .box{
+            display: inline-block;
+            vertical-align: middle;
+            font-size:16px;
+            line-height: middle;
+            text-align: left;
+        }
+    </style>
+    <div class="wp5">
+        <div class="box">12312</div>
+    </div>
+
+    <h2>6、不定宽高：writing-mode</h2>
+    <style>
+        .wp6{
+            border:1px solid red;
+            width:300px;
+            height: 300px;
+            margin: 0 auto;
+            writing-mode: vertical-lr;
+            text-align: center;
+        }
+        .wp6-inner{
+            writing-mode: horizontal-tb;
+            display: inline-block;
+            text-align: center;
+            width:100%;
+        }
+        .wp6 .box{
+            display: inline-block;
+            margin: auto;
+            text-align: left;
+        }
+        /* .div2{
+            writing-mode: vertical-lr;
+        } */
+    </style>
+    <!-- <div class="div1">水平方向</div>
+    <div class="div2">垂直方向</div> -->
+    <div class="wp6">
+        <div class="wp6-inner">
+            <div class="box">12312</div>
+        </div>
+    </div>
+    
+    <h2>7、不定宽高：table</h2>
+    <style>
+        .wp7{
+            border:1px solid red;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            text-align: center;
+        }
+        .wp7 .box{
+            display: inline-block;
+        }
+    </style>
+    <table>
+        <tbody>
+            <tr>
+                <td class="wp7">
+                    <div class="box">123132</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>8、不定宽高：css-table</h2>
+    <style>
+        .wp8{
+            border:1px solid red;
+            width:300px;
+            height:300px;
+            margin:0 auto;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .wp8 .box{
+            display: inline-block;
+        }
+    </style>
+    <div class="wp8">
+        <div class="box">12312</div>
+    </div>
+
+    <h2>9、不定宽高：flex</h2>
+    <style>
+        .wp9{
+            border:1px solid red;
+            width:300px;
+            height:300px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <div class="wp9">
+        <div class="box">12312</div>
+    </div>
+    <h2>10、不定宽高：grid</h2>
+    <style>
+        .wp10{
+            border:1px solid red;
+            width:300px;
+            height:300px;
+            margin: auto;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+        .wp10 .box{
+            /* align-self: center;
+            justify-self: center; */
+        }
+        </style>
+    <div class="wp10">
+        <div class="box">12312</div>
+    </div>
+
+    <div>
+        <pre>
+            PC端有兼容性要求，宽高固定，推荐absolute + 负margin
+            PC端有兼容要求，宽高不固定，推荐css-table
+            PC端无兼容性要求，推荐flex
+            移动端推荐使用flex
+        </pre>
+    </div>
+</body>
+</html>
