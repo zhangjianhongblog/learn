@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>divider分割线</title>
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <style>
+        #app {
+            margin: 50px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p>Steven Paul Jobs was an American entrepreneur and business magnate. He was the chairman, chief executive officer,and a co-founder of Apple Inc.</p>
+        <divider></divider>
+        <p>Steven Paul Jobs was an American entrepreneur and business magnate. He was the chairman, chief executive officer,and a co-founder of Apple Inc.</p>
+        <divider>With Text</divider> 
+        <p>Steven Paul Jobs was an American entrepreneur and business magnate. He was the chairman, chief executive officer,and a co-founder of Apple Inc.</p>
+        <divider dashed></divider>
+        <p>Steven Paul Jobs was an American entrepreneur and business magnate. He was the chairman, chief executive officer,and a co-founder of Apple Inc.</p>
+
+
+        <div>
+            Text
+            <divider type="vertical"></divider>
+            <a href="#">Link</a>
+            <divider type="vertical"></divider>
+            <a href="#">Link</a>
+        </div>
+
+        <div>
+            <divider orientation="left">left text</divider>
+            <p>Steven Paul Jobs was an American entrepreneur and business magnate. He was the chairman, chief executive officer,and a co-founder of Apple Inc.</p>
+            <divider orientation="right">Right text</divider>
+            <p>Steven Paul Jobs was an American entrepreneur and business magnate. He was the chairman, chief executive officer,and a co-founder of Apple Inc.</p>
+        </div>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {},
+            methods: {}
+        })
+    </script>
+</body>
+
+</html>

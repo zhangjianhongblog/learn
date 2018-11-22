@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>layout布局</title>
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <style>
+        #app{
+            margin: 50px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <layout>
+            <i-header>header</i-header>
+            <i-content>content</i-content>
+            <i-footer>footer</i-footer>
+        </layout>   -->
+
+        <layout>
+            <i-header>header</i-header>
+            <layout>
+                <sider hide-trigger>Sider</sider>
+                <i-content>content</i-content>
+            </layout>
+            <i-footer>footer</i-footer>
+        </layout>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+            },
+            methods:{
+            }
+        })
+    </script>
+</body>
+
+</html>

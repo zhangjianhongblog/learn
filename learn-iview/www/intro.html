@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iview介绍</title>
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <style>
+        #app{
+            margin: 50px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <i-button @click="show">Click me!</i-button>
+        <Modal v-model="visible" title="welcome">Welcome to iView!</Modal> 
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                visible:false,
+            },
+            methods:{
+                show(){
+                    this.visible = true;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

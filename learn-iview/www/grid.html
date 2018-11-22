@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" coltent="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" coltent="ie=edge">
+    <title>grid</title>
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <style>
+        #app {
+            margin: 50px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <row>
+            <i-col span="12">i-col 12</i-col>
+            <i-col span="12">i-col 12</i-col>
+        </row>
+        <br>
+        <row>
+            <i-col span="8">i-col 8</i-col>
+            <i-col span="8">i-col 8</i-col>
+            <i-col span="8">i-col 8</i-col>
+        </row>
+        <br>
+        <row>
+            <i-col span="6">i-col 6</i-col>
+            <i-col span="6">i-col 6</i-col>
+            <i-col span="6">i-col 6</i-col>
+            <i-col span="6">i-col 6</i-col>
+        </row>
+        <br>
+        <row gutter="16">
+            <i-col span="6">
+                <div>
+                    i-col 6
+                </div>
+            </i-col>
+            <i-col span="6">
+                <div>
+                    i-col 6
+                </div>
+            </i-col>
+            <i-col span="6">
+                <div>
+                    i-col 6
+                </div>
+            </i-col>
+            <i-col span="6">
+                <div>
+                    i-col 6
+                </div>
+            </i-col>
+        </row>
+
+        <row type="flex">
+            <i-col span="6" order="4">1|order-4</i-col>
+            <i-col span="6" order="3">2|order-3</i-col>
+            <i-col span="6" order="2">3|order-2</i-col>
+            <i-col span="6" order="1">4|order-1</i-col>
+        </row>
+
+        <row>
+            <i-col span="18" push="6">col-18|push-6</i-col>
+            <i-col span="6" pull="18">col-6|pull-18</i-col>
+        </row>
+
+        <row>
+            <i-col span="8">col-8</i-col>
+            <i-col span="8" offset="8">col-8|offset-8</i-col>
+        </row>
+
+        <row>
+            <i-col span="6" offset="8">col-6|offset-8</i-col>
+            <i-col span="6" offset="4">col-6|offset-4</i-col>
+        </row>
+
+        <row>
+            <i-col span="12" offset="8">col-12|offset-8</i-col>
+        </row>
+
+        <p>子元素向左排列</p>
+        <row class="code-row-bg" type="flex" justify="start">
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+        </row>
+        <p>子元素向右排列</p>
+        <row class="code-row-bg" type="flex" justify="end">
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+        </row>
+        <p>子元素居中显示</p>
+        <row class="code-row-bg" type="flex" justify="center">
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+        </row>
+        <p>子元素等宽排列</p>
+        <row class="code-row-bg" type="flex" justify="space-between">
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+        </row>
+        <p>子元素分散排列</p>
+        <row class="code-row-bg" type="flex" justify="space-around">
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+            <i-col span="4">col-4</i-col>
+        </row>
+
+        <p>顶部对齐</p>
+        <row clas="code-row-bg" type="flex" justify="center" align="top">
+            <i-col span="4">
+                <p style="height:80px;background-color:red;">col-4</p>
+            </i-col>
+            <i-col span="4">
+                <p style="height:30px;background-color:green;">col-4</p>
+            </i-col>
+            <i-col span="4">
+                <p style="height:100px;background-color:yellow;">col-4</p>
+            </i-col>
+            <i-col span="4">
+                <p style="height:60px;background-color:blue;">col-4</p>
+            </i-col>
+        </row>
+
+        <p>居中对齐</p>
+        <row class="code-row-bg" type="flex" justify="center" align="middle">
+            <i-col span="4">
+                <p style="height:80px;background-color:red;">col-4</p>
+            </i-col>
+            <i-col span="4">
+                <p style="height:30px;background-color:green;">col-4</p>
+            </i-col>
+            <i-col span="4">
+                <p style="height:100px;background-color:yellow;">col-4</p>
+            </i-col>
+            <i-col span="4">
+                <p style="height:60px;background-color:blue;">col-4</p>
+            </i-col>
+        </row>
+
+        <p>底部居中</p>
+        <row class="code-row-bg" type="flex" justify="center" align="bottom">
+            <i-col span="4">
+                <p style="height:80px;background-color:red;">col-4</p>
+            </i-col>
+            <i-col span="4">
+                <p style="height:30px;background-color:green;">col-4</p>
+            </i-col>
+            <i-col span="4">
+                <p style="height:100px;background-color:yellow;">col-4</p>
+            </i-col>
+            <i-col span="4">
+                <p style="height:60px;background-color:blue;">col-4</p>
+            </i-col>
+        </row>
+
+        <row>
+            <i-col :xs="2" :sm="4" :md="6" :lg="8">1</i-col>
+            <i-col :xs="20" :sm="16" :md="12" :lg="8">2</i-col>
+            <i-col :xs="2" :sm="4" :md="6" :lg="8">3</i-col>
+        </row>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {},
+            methods: {}
+        })
+    </script>
+</body>
+
+</html>

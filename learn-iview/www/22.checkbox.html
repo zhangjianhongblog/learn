@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>checkbox多选</title>
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <style>
+        #app {
+            margin: 50px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <checkbox v-model="single">Checkbox</checkbox>
+            {{single}}
+        </div>
+        <br>
+        <div>
+            <checkbox-group v-model="social">
+                <checkbox label="twitter">
+                    <icon type="logo-twitter"></icon>
+                    <span>Twitter</span>
+                </checkbox>
+                <checkbox label="facebook">
+                    <icon type="logo-facebook"></icon>
+                    <span>Facebook</span>
+                </checkbox>
+                <checkbox label="github">
+                    <icon type="logo-github"></icon>
+                    <span>Github</span>
+                </checkbox>
+                <checkbox label="snapchat">
+                    <icon type="logo-snapchat"></icon>
+                    <span>Snapchat</span>
+                </checkbox>
+            </checkbox-group>
+
+            {{social}}
+        </div>
+        <br>
+        <div>
+            <checkbox-group v-model="fruit">
+                <checkbox label="apple">小</checkbox>
+                <checkbox label="orange">大</checkbox>
+                <checkbox label="big">pig</checkbox>
+            </checkbox-group>
+            {{fruit}}
+        </div>
+        <br>
+        <div>
+            <checkbox v-model="checked" :disabled="disabled">
+                <span v-if="checked">check</span>
+                <span v-else>Uncheck</span>
+                <span>-</span>
+                <span v-if="!disabled">Unable</span>
+                <span v-else>able</span>
+            </checkbox>
+            <i-button type="primary" @click="checked = !checked">
+                <span v-if="!checked">Checked</span>
+                <span v-else>Unchecked</span>
+            </i-button>
+            <i-button type="primary" @click="disabled = !disabled">
+                <span v-if="disabled">Usable</span>
+                <span v-else>Disabled</span>
+            </i-button>
+        </div>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                single: true,
+                social: [],
+                fruit: [],
+                checked:true,
+                disabled:true
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>
