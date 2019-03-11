@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>radio单选</title>
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <style>
+        #app{
+            margin: 50px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <radio v-model="single">单选</radio>
+            {{single}}
+        </div>
+        <div>
+            <radio-group v-model="phone">
+                <radio label="apple">
+                    <icon type="logo-apple"></icon>
+                    Apple
+                </radio>
+                <radio label="android">
+                    <icon type="logo-android"></icon>
+                    Android
+                </radio>   
+                <radio label="windows">
+                    <icon type="logo-windows"></icon>
+                    Windows
+                </radio>   
+            </radio-group>
+        </div>
+        <br>
+        <div>
+            <radio-group v-model="animal">
+                <radio label="pig"></radio>
+                <radio label="dog"></radio>
+                <radio label="snake"></radio>
+            </radio-group>
+        </div>
+        <br>
+        <div>
+            <radio v-model="disabledValue" disabled>不可点击</radio>
+            <radio-group v-model="disabledGroup">
+                <radio label="pig" disabled></radio>
+                <radio label="dog"></radio>
+                <radio label="cat"></radio>
+            </radio-group>
+        </div>
+        <br>
+        <div>
+            <radio-group v-model="vertical" vertical>
+                <radio label="apple"></radio>
+                <radio label="bananer"></radio>
+                <radio label="pear"></radio>
+                <radio label="orange"></radio>
+            </radio-group>
+        </div>
+        <br>
+        <div>
+            <radio-group v-model="city" type="button">
+                <radio label="beijing"></radio>
+                <radio label="shanghai"></radio>
+                <radio label="guangzhou"></radio>
+            </radio-group>
+        </div>
+    </div>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                single:false,
+                phone:"apple",
+                animal:"pig",
+                disabledValue:false,
+                disabledGroup:"dog",
+                vertical:"apple",
+                city:"beijing"
+            },
+            methods:{
+            }
+        })
+    </script>
+</body>
+
+</html>

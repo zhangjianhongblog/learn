@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>split 面板分割</title>
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <style>
+        #app {
+            margin: 50px 100px;
+        }
+
+        .demo-split {
+            height: 200px;
+            border: 1px solid #dcdee2;
+        }
+
+        .demo-split-pane {
+            padding: 10px;
+        }
+        .demo-split-pane.no-pane {
+            height: 200px;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="demo-split">
+            <split v-model="split1">
+                <div slot="left" class="demo-split-pane">
+                    Left Pane
+                </div>
+                <div slot="right" class="demo-split-pane">
+                    Right Pane
+                </div>
+            </split>
+        </div>
+        <div class="demo-split">
+            <split v-model="split2" mode="vertical" @on-moving="moving">
+                <div slot="top" class="demo-split-pane">
+                    上
+                </div>
+                <div slot="bottom" class="demo-split-pane">
+                    下
+                </div>
+            </split>
+        </div>
+
+        <div class="demo-split">
+            <split v-model="split3">
+                <div slot="left" class="demo-split-pane no-pane">
+                    <split v-model="split4" mode="vertical">
+                        <div slot="top" class="demo-split-pane">
+                            上
+                        </div>
+                        <div slot="bottom" class="demo-split-pane">
+                            下
+                        </div>
+                    </split>   
+                </div>
+                <div slot="right" class="demo-split-pane">
+                    右
+                </div>
+            </split>
+        </div>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                split1: 0.5,
+                split2: 0.5,
+                split3: 0.5,
+                split4: 0.5,
+            },
+            methods: {
+                moving(e){
+                    console.log(e);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

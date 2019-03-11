@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>select 选择器</title>
+    <script src="//vuejs.org/js/vue.min.js"></script>
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <style>
+        #app{
+            margin: 50px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <i-select v-model="select1" multiple style="width:300px;height:30px;" size="small">
+            <i-option value="beijing"></i-option>
+            <i-option value="shanghai"></i-option>
+            <i-option value="tianjin"></i-option>
+            <i-option value="xian"></i-option>
+            <i-option value="jiangsu"></i-option>
+            <i-option value="shangrao"></i-option>
+        </i-select>    
+    </div>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                select1:[],
+            },
+            methods:{
+            }
+        })
+    </script>
+</body>
+
+</html>
