@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象</title>
+</head>
+<body>
+    <script>
+        function Fubar(foo,bar) {
+            if (!(this instanceof Fubar)) {
+                return new Fubar(foo,bar);
+            }
+
+            this._foo = foo;
+            this._bar = bar;
+        }
+        console.log(Fubar(1,2)._foo);
+        console.log(new Fubar(1,2)._foo);
+        console.log(new Fubar(1,2)._bar);
+    </script>
+</body>
+</html>

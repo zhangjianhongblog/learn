@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>csv-ie</title>
+    <script>
+        window.onload = function () {
+            function exportCsv() {
+                // 创建AX对象excel
+                var oXL = new ActiveXObject('Excel.Application');
+                // 获取workbook对象
+                var oWB = oXL.Workbooks.Add();
+                // 激活当前sheet
+                var oSheet = oWB.ActiveSheet;
+                var Lenr = [
+                    ['标题一','标题二','标题三'],
+                    ['4','5','6'],
+                    ['1','2','3']
+                ];
+                for (var i = 0; i < Lenr.length; i++) {
+                    for (var j = 0; j < Lenr[i].length; j++) {
+                        oSheet.Cells(i+1,j+1).value = Lenr[i][j];
+                    }
+                }
+                // 设置execl可见属性
+                oXL.Visible = true;
+            }
+            document.getElementById('J_export').onclick = function () {
+                exportCsv();
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript:;" id="J_export">导出</a>
+</body>
+</html>

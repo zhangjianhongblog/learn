@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导出csv文件</title>
+    <script>
+        function exportCsv(obj,name) {
+            // title ['','','']
+            var title = obj.title;
+            // titleForKey ['','','']
+            var titleForKey = obj.titleForKey;
+            var data = obj.data;
+            var str = [];
+            str.push(obj.title.join(',') + '\n');
+            for (var i = 0; i < data.length; i++) {
+                var temp = [];
+                for (var j = 0; j < titleForKey.length; j++) {
+                    temp.push(data[i][titleForKey[j]]);
+                }
+                str.push(temp.join(',') + '\n');
+            }
+            var uri = 'data:text/csv;charset=utf-8,\ufeff' + encodeURIComponent(str.join(''));
+            var downloadLink = document.createElement('a');
+            downloadLink.href = uri;
+            downloadLink.download = (`${name}.csv`)||'export.csv';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        }
+        window.onload = function () {
+            document.getElementById('test').onclick = function () {
+                exportCsv({
+                    title:['第一列','第二列'],
+                    titleForKey:['num1','num2'],
+                    data:[
+                        {
+                            num1:'111',
+                            num2:'aaa'
+                        },
+                        {
+                            num1:'222',
+                            num2:'bbbb'
+                        },
+                        {
+                            num1:'333',
+                            num2:'ccc'
+                        }
+                    ]
+                },'张建红')
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript:;" id="test">导出</a>
+</body>
+</html>
