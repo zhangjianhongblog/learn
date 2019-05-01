@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>csv</title>
+</head>
+<body>
+    <a href="https://www.cnblogs.com/dapianzi/p/10026899.html">参考链接</a>
+    <script>
+        let js_csv = {
+            export_csv(data,name){
+                // '\ufeff' BOM头
+                let uri = 'data:text/csv;charset=utf-8,\ufeff' + encodeURIComponent(data);
+                let downloadLink = document.createElement('a');
+                downloadLink.href = uri;
+                downloadLink.download = (name + '.csv') || 'temp.csv';
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+            },
+            export_table(selector,name){
+                let self = this;
+                if (document.querySelectorAll(selector).length === 0) {
+                    alert(`Selector ${selector} not exists!`);
+                    return false;
+                }
+                self.export_csv(self.get_table_data(selector),name);
+            },
+            get_table_data(selector) {
+                let data = '';
+                document.querySelectorAll(selector + 'tr').forEach(t => {
+                    let tmp = [];
+                    t.querySelector('th,td').forEach(e => {
+                        tmp.push(e.innerText.replace('\n','')); // 单元格里含有多个html元素可能会获取到换行符
+                    });
+                    data += tmp.join(',') + '\n';
+                });
+                return data;
+            }
+        }
+        js_csv.export_csv('张建红,2019年,12月,13日,,,6秒\n聂小娟,2018年,12月,23日,18时,33分,66秒\n聂小娟,2018年,,23日,,33分','张建红');
+    </script>
+</body>
+</html>
