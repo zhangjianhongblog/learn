@@ -1,0 +1,200 @@
+/*iphone4 4s*/
+
+@media only screen and (device-height :480px) and (-webkit-device-pixel-ratio:2) {
+
+    /* Styles */
+    html {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+    /* Styles */
+    html {
+        font-size: 14px;
+    }
+}
+
+
+
+/*iphone5*/
+
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2) {
+
+    /* Styles */
+    html {
+        font-size: 16px;
+    }
+
+}
+
+
+
+/*iphone6*/
+
+@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2) {
+
+    /* Styles */
+    html {
+        font-size: 16px;
+    }
+
+}
+
+
+
+/*iphone6+*/
+
+@media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3) {
+
+    /* Styles */
+    html {
+        font-size: 16px;
+    }
+
+}
+
+
+
+/* iPads (portrait:竖屏)  */
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    html {
+        font-size: 20px;
+    }
+}
+
+/* iPads (landscape:横屏)  */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    html {
+        font-size: 20px;
+    }
+}
+
+
+
+/* iPads (portrait and landscape) */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+
+
+/*魅族*/
+
+@media only screen and (min-device-width :1080px) and (-webkit-min-device-pixel-ratio : 2.5) {
+    html {
+        font-size: 20px;
+    }
+}
+
+
+
+/*mate7*/
+
+@media only screen and (min-device-width :1080px) and (-webkit-min-device-pixel-ratio : 3) {
+    html {
+        font-size: 20px;
+    }
+}
+
+
+
+/* 平板之类的宽度 1024 以下设备 */
+@media only screen and (min-width: 321px) and (max-width: 1024px) {
+    html {
+        font-size: 30px;
+    }
+}
+
+
+
+/* PC客户端或大屏幕设备: 1028px 至更大 */
+
+@media only screen and (min-width: 1029px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+
+
+/* 竖屏 */
+
+/* @media screen and (orientation:portrait) and (max-width: 720px) {
+    html {
+        font-size: 26px;
+    }
+} */
+
+/* 横屏 */
+
+/* @media screen and (orientation:landscape) and (min-width : 480px) {
+    html {
+        font-size: 26px;
+    }
+} */
+
+
+
+
+/* @media (min-width:320px) {  */
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+/* } */
+/* @media (min-width:480px) {  */
+    /* smartphones, Android phones, landscape iPhone */ 
+/* } */
+/* @media (min-width:600px) {  */
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+/* } */
+/* @media (min-width:801px) {  */
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+/* } */
+/* @media (min-width:1025px) {  */
+    /* big landscape tablets, laptops, and desktops */ 
+/* } */
+/* @media (min-width:1281px) {  */
+    /* hi-res laptops and desktops */ 
+/* } */
+
+
+
+
+
+
+
+/* @media screen and (min-width: 320px) { }
+
+@media screen and (min-width: 360px) { }
+
+@media screen and (min-width: 375px) { }
+
+@media screen and (min-width: 400px) { }
+
+@media screen and (min-width: 414px) { }
+
+@media screen and (min-width: 440px) { }
+
+@media screen and (min-width: 480px) { }
+
+@media screen and (min-width: 520px) { }
+
+@media screen and (min-width: 560px) { }
+
+@media screen and (min-width: 600px) { }
+
+@media screen and (min-width: 640px) { }
+
+@media screen and (min-width: 680px) { }
+
+@media screen and (min-width: 720px) { }
+
+@media screen and (min-width: 760px) { }
+
+@media screen and (min-width: 800px) { }
+
+@media screen and (min-width: 960px) { } */
