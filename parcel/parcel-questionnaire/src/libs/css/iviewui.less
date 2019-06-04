@@ -1,0 +1,37 @@
+@import url( './theme/theme.less');
+//遮罩背景透明度
+.ivu-spin-fix{
+    background-color: rgba(255,255,255,0.6) !important;
+}
+// btn字体
+.ivu-btn {
+    font-size: 14px;
+}
+//表格最小高度
+.ivu-table {
+    font-size: 14px;
+    .ivu-table-body{
+        min-height:300px;
+    }
+    .ivu-tooltip-rel{
+        display: inline;//使内部tip超出部分...
+    }
+    //表格各单元格左右边距
+    .ivu-table-cell{
+        padding: 3px 10px;
+    }
+}
+// alert弹窗
+.ivu-alert {
+    font-size: 14px;
+    line-height: 1.5;
+}
+// modal居中
+.ivu-modal-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .ivu-modal{
+        top: 0;
+    }
+}

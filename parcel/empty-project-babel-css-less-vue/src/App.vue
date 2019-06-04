@@ -8,7 +8,7 @@
   export default {
     data: function () {
       return {
-        name: 'Hello World!',
+        name: 'Hello World! 溺水时啥123123',
       }
     },
   };

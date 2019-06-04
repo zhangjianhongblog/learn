@@ -9,6 +9,13 @@ import 'iview/dist/styles/iview.css';
 import '@/libs/css/reset.css';
 import '@/libs/css/media.css';
 
+// 过滤器
+import * as custom from "./libs/js/filters.js";
+Object.keys(custom).forEach(key => Vue.filter(key,custom[key]));
+
+// 全局引用 所有的组件
+import './components/componentRegister.js';
+
 Vue.use(VueRouter);
 Vue.use(iview);
 

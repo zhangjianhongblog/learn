@@ -1,20 +1,20 @@
 <template>
     <div class="container">
+        <div>{{time | dateServer}}</div>
         我是登录页
         <FooterBox></FooterBox>
     </div>
 </template>
 
 <script>
-import FooterBox from '@/components/Footer/index.vue'
 export default {
     name:'login',
-    components:{
-        FooterBox
-    },
+    components:{},
     computed:{},
     data(){
-        return {}
+        return {
+            time:'20190923'
+        }
     },
     methods:{},
     mounted(){},

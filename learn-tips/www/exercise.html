@@ -5,160 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>学习</title>
+    <style>
+        .haveInput{
+            height: 300px;
+            width: 300px;
+            background: red;
+            margin: 100px auto;
+        }
+    </style>
 </head>
 <body>
-    <p id="myP">我是张建红</p>
+    <div class="haveInput" id="haveInput"></div>
     <script>
-        document.write('jh');
-        myP.innerHTML = 'hhh';
-    </script>
-    <!-- <script>
-        (function () {
-            var a = b = 3;
-        })();
-        console.log('a defined?' + (typeof a !== 'undefined'));
-        // console.log(typeof a);
-        console.log('b defined?' + (typeof b !== 'undefined'));
-        // console.log(b);
-    </script> -->
-
-    <!-- <script>
-        'use strict';
-        (function () {
-            var a = b = 3;
-        })();
-        console.log('a defined?' + (typeof a !== 'undefined'));
-        // console.log(typeof a);
-        console.log('b defined?' + (typeof b !== 'undefined'));
-        // console.log(b);
-    </script> -->
-
-    <!-- <script>
-        var myObject = {
-            foo: 'bar',
-            func: function() {
-                var self = this;
-                console.log('outer func: this.foo = ' + this.foo);  // bar
-                console.log('outer func: self.foo = ' + self.foo);  // bar
-                (function () {
-                    console.log('inner func: this.foo = ' + this.foo); // undefined
-                    console.log('inner func: self.foo = ' + self.foo); // bar
-                })();
-            }
-        }
-        myObject.func();
-    </script> -->
-
-    <!-- <script>
-        function foo1() {
-            return {
-                bar:"hello"
-            }
-        }
-        function foo2() {
-            return 
-            {
-                bar: 'hello'
-            }
-        }
-        console.log('foo1 returns');
-        console.log(foo1());
-        console.log('foo2 returns');
-        console.log(foo2());
-    </script> -->
-
-    <!-- <script>
-        (function () {
-            console.log(1); //1
-            setTimeout(function () {
-                console.log(2);
-            },1000) // 4
-            setTimeout(function () {
-                console.log(3);
-            },0) //3
-            console.log(4); //2
-        })()
-    </script> -->
-
-    <!-- <script>
-        function isPalindrome(str) {
-            str = str.replace(/\W/g,'').toLowerCase();
-            var tempStr = str.split('').reverse().join('');
-            return tempStr === str;
-        }
-        console.log(isPalindrome('A car, a man, a maraca'));
-    </script> -->
-
-    <!-- <script>
-        function sum(x) {
-            if (arguments.length === 2) {
-                return arguments[0] + arguments[1];
-            } else {
-                return function (y) {
-                    return x + y;
-                }
-            }
-        }
-        console.log(sum(2,3));
-        console.log(sum(2)(3));
-    </script> -->
-
-    <!-- <script>
-        function sum(x, y) {
-            if (y !== undefined) {
-                return x + y;
-            } else {
-                return function (y) {
-                    return x + y;
-                }
-            }
-        }
-        console.log(sum(2,3));
-        console.log(sum(2)(3));
-    </script> -->
-
-    <!-- <script>
-        for (var i = 0; i < 5; i++) {
-            var btn = document.createElement('button');
-            btn.appendChild(document.createTextNode('Button + ' + i));
-            btn.addEventListener('click',(function (i) {
-                return function () {
-                    console.log(i)
-                };
-            })(i));
-            document.body.appendChild(btn);
-        }
-    </script> -->
-
-    <!-- <script>
-        for (var i = 0; i < 5; i++) {
-            var btn = document.createElement('button');
-            btn.appendChild(document.createTextNode('Button + ' + i));
-            (function (i) {
-                btn.addEventListener('click', function () {
-                    console.log(i)
-                });
-            })(i)
-            document.body.appendChild(btn);
-        }
-    </script> -->
-
-    <!-- <script>
-        ['a','b','c','d','e'].forEach((item,i) =>{
-            var btn = document.createElement('button');
-            btn.appendChild(document.createTextNode('button + ' + i));
-            btn.addEventListener('click',function (){
-                console.log(i);
-            });
-            document.body.appendChild(btn);
+        document.getElementById('haveInput').addEventListener('click',()=>{
+            document.getElementById('haveInput').requestFullscreen();
         })
-    </script> -->
 
-    <!-- <script>
-        let arr = ['1','2','3','11'].map(parseInt);
-        console.log(arr);
-        console.log(parseInt('11',3));
-        console.log(parseInt('3',2));
-    </script> -->
+        function fullScreenFun() {
+            let self = this;
+            var fullscreenEnabled = document.fullscreenEnabled ||
+                                    document.mozFullscreenEnabled ||
+                                    document.webkitFullscreenEnabled ||  
+                                    document.msFullscreenEnabled;
+
+            if (fullscreenEnabled) {
+                let de = document.documentElement;
+                if (self.fullScreenInfo === '打开全屏') {
+                    if (de.requestFullscreen) {
+                        de.requestFullscreen();
+                    } else if (de.mozRequestFullScreen) {
+                        de.mozRequestFullScreen();
+                    } else if (de.webkitRequestFullScreen) {
+                        de.webkitRequestFullScreen();
+                    }
+                    self.fullScreenInfo = '退出全屏';
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen()
+                    } else if(document.webkitCancelFullScreen){
+                        document.webkitCancelFullScreen();
+                    }
+                    self.fullScreenInfo = '打开全屏';
+                }
+            } else {
+                self.fullScreenInfo = '浏览器当前不能全屏';
+            }
+        }
+    </script>
 </body>
 </html>

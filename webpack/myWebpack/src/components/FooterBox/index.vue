@@ -1,7 +1,6 @@
 <template>
     <div class="footerBox">
         {{msg}}
-        {{msg}}
         <Icon type="ios-checkmark" />
         <Icon type="logo-angular" />
         <Icon type="md-arrow-dropdown" />
@@ -10,12 +9,12 @@
 
 <script>
 export default {
-    name:'footerBox',
+    name:'FooterBox',
     components:{},
     computed:{},
     data(){
         return {
-            msg:'我是footerhhhh'
+            msg:'我是footerhhhh123'
         }
     },
     methods:{},
