@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>学习</title>
+    <style>
+        .haveInput{
+            height: 300px;
+            width: 300px;
+            background: red;
+            margin: 100px auto;
+        }
+    </style>
 </head>
 <body>
-    <p id="myP">我是张建红</p>
+    <div class="haveInput" id="haveInput"></div>
     <script>
         Array.prototype.selfMap = function selfMap(fn,context) {
             let arr = Array.prototype.slice.call(this);

@@ -1,0 +1,194 @@
+@import url( './theme/theme.less');
+
+.titleInfo{
+    position: relative;
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.tipsBox{    
+    .tips{
+        display: inline-block;
+        padding: 2px 15px;
+        border: 1px solid #ffd77a;
+        background: #fff9e6;
+        font-size: 12px;
+        border-radius: 25px;
+        color:#990000;
+        margin-bottom: 10px;
+        i{
+            margin-right: 5px;
+        }
+    }
+}
+//单选题 多选题
+.checkQuestionBox{
+    .optionBox{
+        position: relative;
+        line-height: 1.5;
+        overflow: hidden;
+        overflow-x: auto;
+        margin: 5px 0px;
+        .table{
+            display: table;
+            width: 100%;
+        }
+        .tableRows{
+            display: table-row;
+            width: 100%;
+        }
+        .ivu-radio-group,
+        .ivu-checkbox-group{
+            width: 100%;
+        }
+        .optionList{
+            display:table-cell;
+            vertical-align:top;
+            .ivu-radio,
+            .ivu-checkbox{
+                position: absolute;
+                top: 3px;
+            }
+            .list{
+                position: relative;
+                display: inline-block;
+                margin-top: 5px;
+            }
+            .text{
+                display: inline-block;
+                margin-left: 5px;
+                white-space: normal;
+                padding-left: 20px;
+            }
+        }
+    }
+    .ruletipBox{
+        margin-top: 10px;
+        color: #657180;
+        i{
+            font-size: 14px;
+        }
+        .list{
+            margin:0px 5px;
+            font-size: 12px;
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 4px;
+            &.target{
+                border: 1px solid #91D5FF;
+                background-color: #E6F7FF;
+                color: #1890FF;
+            }
+            &.show{
+                border: 1px solid #87E8DE;
+                background-color: #E6FFFB;
+                color: #13C2C2;
+            }
+            &.relate{
+                border: 1px solid #B7EB8F;
+                background-color: #F6FFED;
+                color: #52C41A;
+            }
+        }
+    }
+}
+//表格题
+.tableQuestionBox{
+    .tableBox{
+        margin: 10px 0px;
+        position: relative;
+        table{
+            width: 100%;
+            overflow: hidden;
+            font-size: 14px;
+            td{
+                border-bottom: 1px solid #dcdcdc;
+                border-left: 1px solid #dcdcdc;
+                background-color: #fff;
+                text-align: center;
+                height: 30px;
+                vertical-align: middle;
+                line-height: 20px;
+                padding: 5px 8px;
+                .ivu-radio-wrapper{
+                    margin-right: 0;
+                }
+                &:last-child{
+                    border-right: 1px solid #dcdcdc;
+                }
+                &.questionTit{
+                    text-align: left;
+                }
+            }
+            thead td{
+                border-top:1px solid #dcdcdc;
+                background-color: #FAFAFA;
+                font-size: 14px;
+                font-weight: bold;
+                height: 40px;
+                line-height: 40px;
+                padding: 0px 5px;
+                &:first-child{
+                    border-top-left-radius: 4px;
+                }
+                &:last-child{
+                    border-top-right-radius: 4px;
+                }
+            }
+            tbody:last-child{
+                .radioGroup:last-child td{
+                    &:first-child{
+                        border-bottom-left-radius: 4px;
+                    }
+                    &:last-child{
+                        border-bottom-right-radius: 4px;
+                    }
+                }
+            }
+        }
+        .radioGroup{
+            display: table-row;
+        }
+    }
+    .ruletipBox{
+        margin-top: 10px;
+        color: #006699;
+        i{
+            font-size: 14px;
+        }
+        .list{
+            margin:0px 5px;
+            font-size: 12px;
+            display: inline-block;
+            background: #e1f1ff;
+            padding: 2px 10px;
+            border-radius: 4px;
+            &.show{
+                border: 1px solid #87E8DE;
+                background-color: #E6FFFB;
+                color: #13C2C2;
+            }
+        }
+    }
+}
+
+//简答题
+.shortAnswerBox{
+    .answerBox{
+        margin-top: 10px;
+    }    
+}
+
+.umCompleteTips{
+    float: left;
+    font-size: 12px;
+    color: #f00;
+    .ivu-alert-icon{
+        top: 3px;
+    }
+    .ivu-alert-error{
+        padding: 4px 48px 4px 38px;
+        margin-bottom: 0;
+    }
+}
+

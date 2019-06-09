@@ -1,0 +1,10 @@
+SightSinging.exe ..\数据\嘀哩嘀哩\3101054030104_A_160428A02.wav ..\现场考试的xml\word正式\嘀哩嘀哩.xml 结果\ 405
+SightSinging.exe ..\数据\嘀哩嘀哩\3101054050104_A_160428A02.wav ..\现场考试的xml\word正式\嘀哩嘀哩.xml 结果\ 405
+SightSinging.exe ..\数据\嘀哩嘀哩\3101074050102_A_160428A02.wav ..\现场考试的xml\word正式\嘀哩嘀哩.xml 结果\ 405
+SightSinging.exe ..\数据\嘀哩嘀哩\3101074070101_A_160428A02.wav ..\现场考试的xml\word正式\嘀哩嘀哩.xml 结果\ 405
+SightSinging.exe ..\数据\嘀哩嘀哩\3101094090101_A_160428A02.wav ..\现场考试的xml\word正式\嘀哩嘀哩.xml 结果\ 405
+SightSinging.exe ..\数据\大海啊故乡\3201258020103_A_160428B02.wav ..\现场考试的xml\word正式\大海啊故乡.xml 结果\ 807
+SightSinging.exe ..\数据\大海啊故乡\3201258030101_A_160428B02.wav ..\现场考试的xml\word正式\大海啊故乡.xml 结果\ 807
+SightSinging.exe ..\数据\大海啊故乡\3201258030102_A_160428B02.wav ..\现场考试的xml\word正式\大海啊故乡.xml 结果\ 807
+SightSinging.exe ..\数据\大海啊故乡\3201258030103_A_160428B02.wav ..\现场考试的xml\word正式\大海啊故乡.xml 结果\ 807
+SightSinging.exe ..\数据\大海啊故乡\3201258030105_A_160428B02.wav ..\现场考试的xml\word正式\大海啊故乡.xml 结果\ 807
