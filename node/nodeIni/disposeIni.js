@@ -30,6 +30,11 @@ function findSync(startPath) {
                 encoding:'utf8'
             });
 
+            // 不包含，无法识别的文件
+            // if (fileContent.split(',').length === 7) {
+            //    if(stats.isFile()) result.push(getContent(fileContent));
+            // }
+            // 包含，无法识别的文件
             if(stats.isFile()) result.push(getContent(fileContent));
         });
     }
@@ -46,9 +51,9 @@ function getContent(content){
     tempArr = tempArr.map((item,index) => {
         if (item.indexOf(':') === -1) return item;
         if (index === (tempArr.length -1)) {
-            return item.split(':')[1].slice(0,1);
+            return Number(item.split(':')[1].slice(0,1));
         } else {
-            return item.split(':')[1];
+            return Number(item.split(':')[1]);
         }
     })
     return tempArr;
