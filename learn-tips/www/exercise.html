@@ -6,31 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>学习</title>
     <style>
-        .haveInput{
-            height: 300px;
-            width: 300px;
-            background: red;
-            margin: 100px auto;
-        }
+        
     </style>
 </head>
 <body>
-    <div class="haveInput" id="haveInput"></div>
-    <script>
-        Array.prototype.selfMap = function selfMap(fn,context) {
-            let arr = Array.prototype.slice.call(this);
-            let mappedArr = [];
-            for (let i = 0; i < arr.length; i++) {
-                if (!arr.hasOwnPrototype(i)) continue;
-                mappedArr.push(fn.call(context,arr[i],i,this))
-            }
-            return mappedArr;
-        }  
+   <script>
+       const genUid = () => {
+           var length = 20;
+           var soupLength = genUid.soup_.length;
+           var id = [];
+           for (var i = 0; i < length; i++) {
+               id[i] = genUid.soup_.charAt(Math.random() * soupLength)
+           };
+           return id.join('');
+       }
+       genUid.soup_ = '!#$%()*+,-./:;=?@[]^_`{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+       console.log(genUid()); // _$*fG7`gys-,$bHRggNV
 
-        const myArr = [1,2,3].selfMap(item => {
-            return item + 2;
-        });
-        console.log(myArr);
-    </script>
+       
+   </script>
 </body>
 </html>
