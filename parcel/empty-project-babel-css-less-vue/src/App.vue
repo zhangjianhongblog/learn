@@ -1,16 +1,25 @@
 <template>
   <div>
-    {{name}}
+    <FunctionButton :title="'我是一个按钮'" @click="log"><span>哈哈哈哈</span></FunctionButton>
   </div>
 </template>
 
 <script>
+  import FunctionButton from './modules/functionButton.js';
   export default {
     data: function () {
       return {
         name: 'Hello World! 溺水时啥123123',
       }
     },
+    components:{
+      FunctionButton
+    },
+    methods:{
+      log(){
+        console.log('哈哈哈哈')
+      }
+    }
   };
 </script>
 
