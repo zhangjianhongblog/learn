@@ -1,4 +1,5 @@
 const {app,BrowserWindow} = require('electron');
+let shortcut = require('./libs/shortcutKeys.js'); //注册快捷键
 
 // 保持对window对象的全局引用。如果不这么做的话，当Javascript对象被垃圾回收的时候，window对象将会自动的关闭
 let win;
@@ -15,8 +16,7 @@ function createWindow() {
     // 加载index.html文件
     win.loadFile('index.html');
 
-    // 打开开发者工具
-    win.webContents.openDevTools();
+    shortcut.register();
 
     // 当window被关闭，这个事件会被触发
     win.on('closed',function () {
