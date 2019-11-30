@@ -7,14 +7,14 @@ const {
 } = require('electron');
 
 class Shortcut {
-    register(keys="Command+Control+Alt+F5") {
-        globalShortcut.register(keys,function() {
+    register(keys = "Command+Control+Alt+F5") {
+        globalShortcut.register(keys, function () {
             let allWindow = BrowserWindow.getAllWindows();
             for (let index = 0; index < allWindow.length; index++) {
                 let win = allWindow[index];
                 if (win.webContents && !win.webContents.isDevToolsOpened()) {
                     win.webContents.openDevTools({
-                        mode:'detach'
+                        mode: 'detach'
                     })
                 }
             }
@@ -22,7 +22,7 @@ class Shortcut {
     }
 }
 
-app.on('will-quit',function () {
+app.on('will-quit', function () {
     globalShortcut.unregisterAll();
 })
 
