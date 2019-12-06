@@ -11,9 +11,12 @@
         }
         #container{
             display:grid;
-            grid-template-columns:100px auto 100px;
-            /* grid-template-rows: 150px 1fr 1fr; */
-            gap:20px;
+            grid-template-columns:100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            /* grid-auto-flow: column dense; */
+            grid-template-areas: 'a b c'
+                                 'd e f'
+                                 'g h i';
         }
         .item{
             font-size: 2em;
@@ -22,10 +25,13 @@
         }
         .item-1 {
             background-color: #ef342a;
+            justify-self: center;
+            align-self: center;
         }
 
         .item-2 {
             background-color: #f68f26;
+            /* grid-column:1/3; */
         }
 
         .item-3 {
