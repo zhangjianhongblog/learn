@@ -13,6 +13,6 @@ void main() {
   list.add(true);
   print(list);
 
-  var map1 = new Map<dynamic>();
+  // var map1 = new Map<dynamic>();
   
 }
