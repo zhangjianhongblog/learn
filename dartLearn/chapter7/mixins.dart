@@ -1,35 +1,29 @@
 void main() {
-  var d = new D();
-  d.a();
+
 }
 
-class A {
-  void a(){
-    print('A.a..');
-  }
+abstract class Engine {
+  void work();
 }
 
-class B {
-  void a(){
-    print('B.a..');
-  }
-  void b(){
-    print('B.b..');
+class OilEngine implements Engine{
+  @override
+  void work() {
+    print('work with oil...');
   }
 }
 
-class C {
-  void a(){
-    print('C.a..');
-  }
-  void b(){
-    print('C.b..');
-  }
-  void c(){
-    print('C.c..');
+class ElectricEngine implements Engine{
+  @override
+  void work() {
+    print('work with electric...');
   }
 }
 
-class D extends A with B,C{
-
+class Tyre {
+  String name;
+  void run () {}
 }
+
+class Car = Tyre with ElectricEngine;
+class bus = Tyre with OilEngine;

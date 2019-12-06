@@ -1,6 +1,6 @@
 void main() {
   var utils = new Utils();
-  utils.put<String>(1);
+  utils.put<String>('element');
 }
 
 class Utils{
