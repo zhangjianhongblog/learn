@@ -26,11 +26,12 @@ class Student extends Person {
   bool get isAdult => age > 15;
 
   @override
-  void run () {
+  void run() {
     print('Student run...');
   }
+
   @override
-  String toString () {
+  String toString() {
     return 'name is $name, age is $age';
   }
 }
