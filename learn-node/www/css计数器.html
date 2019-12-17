@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 计数器</title>
+    <style>
+        div{
+            /* counter-reset: title 5; */
+            counter-reset: title;
+        }
+        h3:before{
+            /* counter-increment: title 2; */
+            counter-increment: title;
+            /* content:"Title "counter(title,lower-latin)" : "; */
+            content:"Title "counter(title)" : ";
+        }
+        ol{
+            counter-reset: item;
+        }
+        li{
+            display:block;
+        }
+        li:before{
+            counter-increment:item;
+            content:counters(item,'.')"  ";
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>陶瓮</h3>
+        <h3>介绍</h3>
+        <h3>CSS 计数器</h3>
+    </div>
+    <ol>
+        <li>item1</li>
+        <li>item2
+            <ol>
+                <li>item2.1</li>
+                <li>item2.2</li>
+                <li>item2.3
+                    <ol>
+                        <li>item2.3.1</li>
+                    </ol>
+                    <ol>
+                        <li>item2.3.1</li>
+                    </ol>
+                </li>
+                <li>item2.4</li>
+            </ol>
+        </li>
+        <li>item3</li>
+        <li>item4</li>
+    </ol>
+</body>
+</html>
