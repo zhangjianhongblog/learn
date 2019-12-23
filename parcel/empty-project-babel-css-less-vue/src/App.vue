@@ -1,13 +1,15 @@
 <template>
-  <div>
+  <div class="heheh">
     <FunctionButton :title="'我是一个按钮'" @click="log"><span>哈哈哈哈</span></FunctionButton>
-    <list :myList="undefined"><list>
+    <list :myList="undefined"></list>
+    <slotLearn></slotLearn>
   </div>
 </template>
 
 <script>
   import FunctionButton from './modules/functionButton.js';
   import list from './modules/list.vue';
+  import slotLearn from './modules/slotLearn.vue';
   export default {
     data: function () {
       return {
@@ -16,7 +18,8 @@
     },
     components: {
       FunctionButton,
-      list
+      list,
+      slotLearn
     },
     methods: {
       log() {
